@@ -1,0 +1,24 @@
+/var/log/nginx/error.log {
+    daily
+    rotate 90
+    missingok
+    ifempty
+    sharedscripts
+    compress
+    create 0640 www-data adm
+    postrotate
+        docker exec -it nginx/logrotate systemctl reload nginx > /dev/null 2>/dev/null || true
+    endscript
+}
+/var/log/nginx/access.log {
+    daily
+    rotate 90
+    missingok
+    ifempty
+    sharedscripts
+    compress
+    create 0640 www-data adm
+    postrotate
+        docker exec -it nginx/logrotate systemctl reload nginx > /dev/null 2>/dev/null || true
+    endscript
+}
