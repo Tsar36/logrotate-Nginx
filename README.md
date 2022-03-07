@@ -1,5 +1,5 @@
 # logrotate-Nginx
-Logrotation access.log ang error.log
+Logrotation access.log and error.log
 ----------------------------------------
 Clone the repo to local env
 
